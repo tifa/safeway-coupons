@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: "14 0 * * *"
 
+permissions:
+  actions: write
+
 jobs:
   app:
     name: Safeway Coupons
@@ -39,4 +42,4 @@ jobs:
           safeway-coupons
       
       - name: Keepalive
-        uses: gautamkrishnar/keepalive-workflow@v1
+        uses: gautamkrishnar/keepalive-workflow@v2
