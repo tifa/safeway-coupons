@@ -7,6 +7,8 @@ on:
 
 permissions:
   actions: write
+  contents: read
+  packages: write
 
 jobs:
   app:
@@ -36,6 +38,9 @@ jobs:
           sudo apt install -y google-chrome-stable sendmail
           python3 -m pip install --upgrade pip
           pip install safeway-coupons setuptools
+          # TODO: Remove when this PR is merged: https://github.com/smkent/safeway-coupons/pull/134
+          cp patch/session.py /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/safeway_coupons/session.py
+
 
       - name: Clip coupons
         run: |
