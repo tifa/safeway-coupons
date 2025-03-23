@@ -39,6 +39,7 @@ jobs:
           python3 -m pip install --upgrade pip
           pip install safeway-coupons setuptools
           # TODO: Remove when this PR is merged: https://github.com/smkent/safeway-coupons/pull/134
+          test /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/safeway_coupons/session.py
           cp patch/session.py /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/safeway_coupons/session.py
 
 
